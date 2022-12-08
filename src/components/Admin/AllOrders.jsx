@@ -33,7 +33,7 @@ function AllOrders() {
       headers:{"x-auth-token":JSON.parse(user).token},
     })
     if(data){
-      window.location.href = '/admin'
+      window.location.href = '/#/admin'
     }
   }
   return (

@@ -5,7 +5,7 @@ import { cartTotalPriceSelector } from "../store/selector";
 import { host } from "../utils/host";
 import axios from "axios";
 import { clear } from "../store/cart";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { useState } from "react";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
@@ -22,6 +22,7 @@ function Myorder() {
   const totalPrice = useSelector(cartTotalPriceSelector);
   const dispatch = useDispatch();
   const { id } = useParams();
+  const [searchParams,setSearchParams] = useSearchParams()
   const [items, setitems] = useState([]);
   const [loading, setloading] = useState(true);
   const orders = async () => {
@@ -43,7 +44,7 @@ function Myorder() {
   useEffect(() => {
     const resolve = async () => {
       try {
-        let query = window.location.search.substring(1);
+        let query = searchParams.get("success")
         if (query == "true") {
           const user = localStorage.getItem("user");
           const cart = localStorage.getItem("cartdata");
