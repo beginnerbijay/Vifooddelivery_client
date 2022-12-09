@@ -108,9 +108,9 @@ function Payment({ totalPrice, cart }) {
       </Stack>
       <Stack className="mx-auto total_cart">
         <h3 className="mb-4 fw-light">Final ckeckout</h3>
-        <span>SubTotal:{totalPrice}</span>
-        <span>Discount:00</span>
-        <span>Total:{totalPrice}</span>
+        <span>SubTotal: &#8377; {totalPrice}</span>
+        <span>Discount: &#8377; 00</span>
+        <span>Total: &#8377; {totalPrice}</span>
         <Button
           disabled={!disable}
           style={{ backgroundColor: "#fff", color: "#000", marginTop: "1rem" }}
